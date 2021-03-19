@@ -1,16 +1,16 @@
 
-# Compara bancos de dados SQL Server
+# Compare SQL Server databases
 
-#### Utilitário para compraração de estrutura de bancos de dados SQL Server
+#### SQL Server database structure comparison utility
 
-Pode ser útil em processos de migração de bancos de dados, ou quando ocorrerem erros na edição de registros do SQL Server.
+Useful in database migration processes, or when errors occur when editing SQL Server records.
 
-Feito em VB 6
+Made with VB6
 
-# Tipos de verificação:
+# Types of verification:
 
-- Verifica se as tabelas do banco A, existem no banco B;
-- Verifica se as colunas das tabelas do banco A, existem nas tabelas do banco B;
-- Verifica se os tipos de dados das colunas das tabelas do banco A, são iguais à colunas das tabelas do banco B;
-- Verifica se o tamanho das colunas das tabelas do banco A, são iguais àos tamanhos das tabelas do banco B;
-- Verifica se a configuração para permitir nulo, estão iguais entre as colunas das tabelas de ambos os bancos.
+- Checks whether the tables in bank A exist in bank B;
+- Checks whether the columns in the tables in bank A, exist in the tables in bank B;
+- Checks whether the data types of the columns in the tables in bank A are the same as the columns in the tables in bank B;
+- Checks whether the column sizes of the tables in bank A are the same as the sizes of the tables in bank B;
+- Checks whether the setting to allow null, are the same between the columns of the tables of both banks.
