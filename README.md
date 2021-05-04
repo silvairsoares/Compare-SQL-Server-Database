@@ -15,4 +15,4 @@ Made with VB6
 - Checks whether the column sizes of the tables in bank A are the same as the sizes of the tables in bank B;
 - Checks whether the setting to allow null, are the same between the columns of the tables of both banks.
 
-	[![](https://github.com/silvairsoares/Compare-SQL-Server-Database/blob/main/ComparaBdSql.png)](https://github.com/silvairsoares/Compare-SQL-Server-Database/blob/main/ComparaBd_SQL.png)
+	[![](https://github.com/silvairsoares/Compare-SQL-Server-Database/blob/main/ComparaBd_SQL.png)](https://github.com/silvairsoares/Compare-SQL-Server-Database/blob/main/ComparaBd_SQL.png)
