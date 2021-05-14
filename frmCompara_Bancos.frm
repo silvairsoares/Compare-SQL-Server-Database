@@ -50,7 +50,7 @@ Begin VB.Form frmComparaBancos
       Height          =   405
       Left            =   9600
       TabIndex        =   5
-      Text            =   "IP\Nome_Instância,Porta"
+      Text            =   "IP\Nome_InstÃ¢ncia,Porta"
       Top             =   120
       Width           =   4935
    End
@@ -58,7 +58,7 @@ Begin VB.Form frmComparaBancos
       Height          =   405
       Left            =   1080
       TabIndex        =   0
-      Text            =   "IP\Nome_Instância,Porta"
+      Text            =   "IP\Nome_InstÃ¢ncia,Porta"
       Top             =   120
       Width           =   4935
    End
@@ -183,7 +183,7 @@ Begin VB.Form frmComparaBancos
       Width           =   975
    End
    Begin VB.Label Label7 
-      Caption         =   "Usuário"
+      Caption         =   "UsuÃ¡rio"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -217,7 +217,7 @@ Begin VB.Form frmComparaBancos
       Width           =   975
    End
    Begin VB.Label Label5 
-      Caption         =   "Usuário"
+      Caption         =   "UsuÃ¡rio"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -328,7 +328,7 @@ Dim ConexaoB As New Connection
 Private Sub btnComparar_Click()
     
     If lstBancosA.Text = "" Or lstBancosB.Text = "" Then
-        MsgBox "Selecione 2 bancos de dados, para executar a comparação.", vbCritical + vbOKOnly
+        MsgBox "Selecione 2 bancos de dados, para executar a comparaÃ§Ã£o.", vbCritical + vbOKOnly
         Exit Sub
     End If
     
@@ -346,10 +346,10 @@ Private Sub btnComparar_Click()
     DoEvents
     
     If txtResultado = "" Then
-        txtResultado = "Os bancos de dados comparados têm estruturas iguais."
-        MsgBox "Verificação concluída com sucesso", vbInformation, "Ok"
+        txtResultado = "Os bancos de dados comparados tÃªm estruturas iguais."
+        MsgBox "VerificaÃ§Ã£o concluÃ­da com sucesso", vbInformation, "Ok"
     Else
-        MsgBox "Verificação concluída com falhas", vbCritical, "Atenção"
+        MsgBox "VerificaÃ§Ã£o concluÃ­da com falhas", vbCritical, "AtenÃ§Ã£o"
     End If
 
 End Sub
@@ -371,11 +371,11 @@ Private Sub ExecutaComparacao()
 
     Do While Not rsEstruturaA.EOF
 
-        'Verifica a existência da tabela
+        'Verifica a existÃªncia da tabela
         rsEstruturaB.Requery
         rsEstruturaB.Find " Tabela = '" & rsEstruturaA("Tabela") & "' "
         If rsEstruturaB.EOF Then
-            Log "- Erro - Não encontrada a tabela """ & rsEstruturaA("Tabela") & """ no banco """ & lstBancosB & """"
+            Log "- Erro - NÃ£o encontrada a tabela """ & rsEstruturaA("Tabela") & """ no banco """ & lstBancosB & """"
         Else
             VerificaDetalhesDaTabela rsEstruturaA("Tabela")
         End If
@@ -409,14 +409,14 @@ Private Sub VerificaDetalhesDaTabela(Tabela As String)
 
     Do While Not rsEstruturaA.EOF
 
-        'Verifica a existência da tabela
+        'Verifica a existÃªncia da tabela
         rsEstruturaB.Requery
         rsEstruturaB.Find " Coluna = '" & rsEstruturaA("Coluna") & "' "
         If rsEstruturaB.EOF Then
-            Log "- Erro - Não encontrada a coluna """ & rsEstruturaA("Coluna") & """ na tabela """ & Tabela & """ do banco """ & lstBancosB & """"
+            Log "- Erro - NÃ£o encontrada a coluna """ & rsEstruturaA("Coluna") & """ na tabela """ & Tabela & """ do banco """ & lstBancosB & """"
         Else
             If rsEstruturaA("PermiteNull") <> rsEstruturaB("PermiteNull") Then
-                strErro = "- Erro - Configuração de permissão para valor nulo" & vbNewLine
+                strErro = "- Erro - ConfiguraÃ§Ã£o de permissÃ£o para valor nulo" & vbNewLine
                 strErro = strErro & vbTab & "Tabela " & vbTab & "" & Tabela & "" & vbNewLine
                 strErro = strErro & vbTab & "Coluna " & vbTab & "" & rsEstruturaB("Coluna") & "" & vbNewLine
                 strErro = strErro & vbTab & "Banco A " & vbTab & "" & rsEstruturaA("PermiteNull") & "" & vbNewLine
@@ -454,7 +454,7 @@ End Sub
 
 Private Sub Log(Mensagem As String)
 
-    txtResultado = txtResultado & Mensagem & vbNewLine & "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" & vbNewLine
+    txtResultado = txtResultado & Mensagem & vbNewLine & String(243, "-") & vbNewLine
     
 End Sub
 
